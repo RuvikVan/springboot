@@ -1,0 +1,33 @@
+spring:
+  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      location: /tmp
+      max-file-size: 1Mb
+      max-request-size: 10Mb
+
+logging:
+  level:
+    tk:
+      mybatis: TRACE
+    cn:
+      juhe: TRACE
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+mybatis:
+  type-aliases-package: com.frame.springboot.model
+  mapper-locations: classpath*:/mappers/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers: com.frame.springboot.util.MyMapper
+  not-empty: true
+  identity: MYSQL
+
