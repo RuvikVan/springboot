@@ -20,6 +20,7 @@ public class HelloWorld {
     @RequestMapping(value = "/world", method = RequestMethod.GET)
     public String world(){
 
+
         City city = new City();
 
         city.setName("qwe");
